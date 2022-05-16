@@ -1,19 +1,30 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { AnimeT } from "../Models/Anime";
 interface CardProps {
   anime: AnimeT;
 }
+const styles = StyleSheet.create({
+  logo: {
+    width: 230 / 2,
+    height: 324 / 2,
+    margin: "",
+  },
+  card: {
+    display: "flex",
+  },
+});
+
 export const Card = ({ anime }: CardProps) => {
   return (
-    <View>
-      <Text>
-        {anime.tags.map((tag) => (
-          <Text>{tag.name}, </Text>
-        ))}
-        {"\n"}
-        {"\n"}
-      </Text>
+    <View style={styles.card}>
+      <Image
+        style={styles.logo}
+        source={{
+          uri: anime.coverImage.large,
+        }}
+      />
+      <Text style={styles.logo}>{anime.title.native}</Text>
     </View>
   );
 };

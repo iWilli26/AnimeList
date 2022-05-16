@@ -13,8 +13,4 @@ const styles = StyleSheet.create({
   home: {
     flex: 1,
   },
-  example: {
-    fontSize: 30,
-    margin: 20,
-  },
 });
